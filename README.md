@@ -45,7 +45,7 @@ This generates an XMEML file. Drop that into XML Parser.
 ## Build from source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/xml-parser
+git clone https://github.com/jonnyelwyn/xml-parser
 cd xml-parser
 npm install
 npm run build
