@@ -1,7 +1,7 @@
 {
   "productName": "XML Parser",
   "version": "1.0.0",
-  "identifier": "com.cutdaily.xmemlparser",
+  "identifier": "com.editingtools.xmlparser",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:3000",
