@@ -50,6 +50,18 @@ npm run build
 - Transcriber Translator — Ready for Distribution
 - Tidy Media Manager — Ready for Distribution
 
+## Once Rafael sends the key
+
+1. Put the `.p8` file at `~/.appstoreconnect/private_keys/AuthKey_KEYID.p8` (never in the repo)
+2. Fill in `KEY_ID` and `ISSUER_ID` in `scripts/sign.sh`
+3. Run `bash scripts/sign.sh`
+4. Verify Gatekeeper accepts it before shipping:
+   ```bash
+   spctl -a -vvv -t install "src-tauri/target/release/bundle/macos/XML Parser.app"
+   ```
+   Should say: `source=Notarized Developer ID`
+5. Tauri's bundler staples the notarisation ticket automatically — but confirm the .dmg works on a clean Mac (or VM) before distributing.
+
 ## Notes
 
 - Certificates in the APPLE CERTIFICATES Dropbox folder belong to Rafael (Developer ID Application ones) and Jonny (Distribution, Development)
