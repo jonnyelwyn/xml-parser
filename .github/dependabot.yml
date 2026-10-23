@@ -1,0 +1,19 @@
+# Dependabot: security fixes only, and only small (minor/patch) upgrades.
+# A major upgrade (e.g. Next 15 -> 16) needs code changes and a proper test,
+# so it never arrives as an automatic PR — do it as a planned task. Open
+# security alerts still show on GitHub's Security tab either way.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    # 0 turns off routine "newer version available" PRs; security PRs still come.
+    open-pull-requests-limit: 0
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    groups:
+      security-fixes:
+        applies-to: security-updates
+        update-types: ["minor", "patch"]
